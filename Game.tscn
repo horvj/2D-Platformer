@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://b0wq6ial7vqwe"]
+[gd_scene load_steps=3 format=3 uid="uid://b0wq6ial7vqwe"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dbwxas4ejuh3b" path="res://Assets/player.png" id="1_kx8uq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab6pm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kx8uq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_ab6pm")
