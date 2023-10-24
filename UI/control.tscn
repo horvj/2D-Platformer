@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c67w85w2fy20f"]
+
+[ext_resource type="Script" path="res://UI/Control.gd" id="1_iubli"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iubli")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 645.0
+color = Color(0.211765, 0.0862745, 0.2, 1)
+
+[node name="Swordsman" type="Button" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 354.0
+offset_right = 743.0
+offset_bottom = 413.0
+text = "Swordsman"
+
+[node name="Archer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 449.0
+offset_right = 743.0
+offset_bottom = 508.0
+text = "Archer
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 209.0
+offset_right = 467.0
+offset_bottom = 235.0
+scale = Vector2(3, 3)
+text = "Player 1 Choose Character
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Swordsman" to="." method="_on_swordsman_button_down"]

@@ -19,19 +19,13 @@ func _physics_process(delta):
 		$Sprite.play("Idle")
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump2") and is_on_floor():
 		$Sprite.play("Jump")
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("Attack1"):
-		$Sprite.play("Attack1")
-	if Input.is_action_just_pressed("Attack2"):
-		$Sprite.play("Attack2")
-	if Input.is_action_just_pressed("Attack3"):
-		$Sprite.play("Attack3")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("left", "right")
+	var direction = Input.get_axis("left2", "right2")
 	if direction:
 		velocity.x = direction * SPEED
 		if direction < 0:
