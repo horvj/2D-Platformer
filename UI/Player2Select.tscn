@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c67w85w2fy20f"]
+[gd_scene load_steps=2 format=3 uid="uid://gxyvh5001c0e"]
 
-[ext_resource type="Script" path="res://UI/Control.gd" id="1_iubli"]
+[ext_resource type="Script" path="res://UI/Control.gd" id="1_ryypx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iubli")
+script = ExtResource("1_ryypx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -50,7 +50,7 @@ offset_top = 209.0
 offset_right = 467.0
 offset_bottom = 235.0
 scale = Vector2(3, 3)
-text = "Player 1 Choose Character
+text = "Player 2 Choose Character
 "
 horizontal_alignment = 1
 vertical_alignment = 1
