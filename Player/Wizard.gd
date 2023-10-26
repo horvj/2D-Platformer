@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+var health = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,6 +26,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 		if Input.is_action_just_pressed("Attack1"):
 			$Sprite.play("Attack1")
+			
 		if Input.is_action_just_pressed("Attack2"):
 			$Sprite.play("Attack2")
 		if Input.is_action_just_pressed("Attack3"):
