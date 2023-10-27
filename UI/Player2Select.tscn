@@ -57,5 +57,4 @@ vertical_alignment = 1
 
 [connection signal="button_down" from="Swordsman" to="." method="_on_swordsman_button_down"]
 [connection signal="button_down" from="Archer" to="." method="_on_archer_button_down"]
-[connection signal="button_down" from="Wizard" to="." method="_on_archer_button_down"]
 [connection signal="button_down" from="Wizard" to="." method="_on_wizard_button_down"]
