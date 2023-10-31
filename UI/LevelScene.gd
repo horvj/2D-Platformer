@@ -2,8 +2,10 @@ extends Control
 
 
 func _on_battlefield_button_down():
-	get_tree().change_scene_to_file("res://Levels/battlefield.tscn")
+	Global.level = "Battlefield"
+	get_tree().change_scene_to_file("res://UI/timer.tscn")
 
 
 func _on_plane_button_down():
-	get_tree().change_scene_to_file("res://Levels/plane.tscn")
+	Global.level = "Plane"
+	get_tree().change_scene_to_file("res://UI/timer.tscn")

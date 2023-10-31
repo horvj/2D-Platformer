@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg20q211s76hq"]
+
+[sub_resource type="GDScript" id="GDScript_g84f5"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_g84f5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 652.0
+color = Color(0.831373, 0.572549, 0.85098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 179.0
+offset_right = 466.0
+offset_bottom = 387.0
+text = "Player 1 Controls:
+
+Left: A
+Right: D
+Jump: W
+Attack 1: Shift
+Attack 2: Control 
+Attack 3: Z"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 178.0
+offset_right = 789.0
+offset_bottom = 386.0
+text = "Player 2 Controls:
+
+Left: Left Arrow Key
+Right: Right Arrow Key
+Jump: Up Arrow Key"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 461.0
+offset_right = 716.0
+offset_bottom = 525.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

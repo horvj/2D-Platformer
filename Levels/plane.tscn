@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbkek488fdrsq"]
+[gd_scene load_steps=9 format=3 uid="uid://bbkek488fdrsq"]
 
+[ext_resource type="Script" path="res://Levels/plane.gd" id="1_06blx"]
 [ext_resource type="Script" path="res://Player/Player1.gd" id="1_rdylt"]
 [ext_resource type="Script" path="res://Player/Player2.gd" id="2_m4234"]
+[ext_resource type="Script" path="res://Levels/Menu.gd" id="4_60g0a"]
+[ext_resource type="PackedScene" uid="uid://dg20q211s76hq" path="res://UI/controls.tscn" id="5_hw06s"]
+[ext_resource type="Script" path="res://UI/controls.gd" id="6_hcqi2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpp"]
 size = Vector2(1152, 50)
 
+[sub_resource type="LabelSettings" id="LabelSettings_7juln"]
+font_size = 50
+
 [node name="Plane" type="Node2D"]
+script = ExtResource("1_06blx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -37,3 +45,105 @@ script = ExtResource("1_rdylt")
 [node name="Player2" type="Node2D" parent="."]
 position = Vector2(973, 448)
 script = ExtResource("2_m4234")
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_60g0a")
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 0
+offset_top = 13.0
+offset_right = 1154.0
+offset_bottom = 602.0
+color = Color(0.843137, 0.564706, 0.741176, 1)
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 170.0
+offset_right = 724.0
+offset_bottom = 242.0
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_7juln")
+
+[node name="Restart" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 368.0
+offset_right = 709.0
+offset_bottom = 402.0
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 318.0
+offset_right = 708.0
+offset_bottom = 352.0
+text = "Quit"
+
+[node name="Save" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 265.0
+offset_right = 708.0
+offset_bottom = 299.0
+text = "Save"
+
+[node name="Controls" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 420.0
+offset_right = 712.0
+offset_bottom = 454.0
+text = "Controls"
+
+[node name="Controls" parent="." instance=ExtResource("5_hw06s")]
+visible = false
+script = ExtResource("6_hcqi2")
+
+[node name="ColorRect2" type="ColorRect" parent="Controls"]
+offset_right = 1160.0
+offset_bottom = 652.0
+color = Color(0.831373, 0.572549, 0.85098, 1)
+
+[node name="Label3" type="Label" parent="Controls"]
+offset_left = 323.0
+offset_top = 179.0
+offset_right = 466.0
+offset_bottom = 387.0
+text = "Player 1 Controls:
+
+Left: A
+Right: D
+Jump: W
+Attack 1: Shift
+Attack 2: Control 
+Attack 3: Z"
+
+[node name="Label4" type="Label" parent="Controls"]
+offset_left = 616.0
+offset_top = 178.0
+offset_right = 789.0
+offset_bottom = 386.0
+text = "Player 2 Controls:
+
+Left: Left Arrow Key
+Right: Right Arrow Key
+Jump: Up Arrow Key"
+
+[node name="Menu" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 455.0
+offset_right = 734.0
+offset_bottom = 532.0
+text = "Menu"
+
+[connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/Controls" to="Menu" method="_on_controls_pressed"]
+[connection signal="pressed" from="Controls/Menu" to="Controls" method="_on_menu_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gxyvh5001c0e"]
 
-[ext_resource type="Script" path="res://UI/Control.gd" id="1_ryypx"]
+[ext_resource type="Script" path="res://UI/Player2Select.gd" id="1_nrg6y"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ryypx")
+script = ExtResource("1_nrg6y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

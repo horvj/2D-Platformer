@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5soohod6lprv"]
+
+[ext_resource type="Script" path="res://UI/timer.gd" id="1_nq6xh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2f7o"]
+font_size = 500
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nq6xh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.365
+anchor_bottom = 0.313
+offset_left = 428.0
+offset_top = -16.0
+offset_right = 453.52
+offset_bottom = 466.176
+text = "3"
+label_settings = SubResource("LabelSettings_x2f7o")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
