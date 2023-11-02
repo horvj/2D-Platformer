@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://ch7v2kwfr540l"]
+[gd_scene load_steps=62 format=3 uid="uid://ch7v2kwfr540l"]
 
 [ext_resource type="Script" path="res://Player/Wizard.gd" id="1_d1hoj"]
 [ext_resource type="Texture2D" uid="uid://tmhy535nvxd1" path="res://Assets/Wizard/Hurt.png" id="2_6oxvu"]
@@ -394,6 +394,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx337"]
 size = Vector2(49.5, 75.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoxnu"]
+size = Vector2(45.5, 45)
+
 [node name="Wizard" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -408,6 +411,12 @@ script = ExtResource("6_7yfds")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-5.75, 27.25)
 shape = SubResource("RectangleShape2D_mx337")
+
+[node name="Attack" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Attack"]
+position = Vector2(35.25, 33)
+shape = SubResource("RectangleShape2D_eoxnu")
 
 [connection signal="ready" from="." to="Player" method="_on_wizard_ready"]
 [connection signal="ready" from="Player/CollisionShape2D" to="Player" method="_on_collision_shape_2d_ready"]

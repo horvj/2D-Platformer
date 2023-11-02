@@ -11,3 +11,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+func _unhandled_input(event):
+	if event.is_action_pressed("menu"):
+		var menu = get_node_or_null("/root/Level/Menu")
+		if menu == null:
+			get_tree().quit()
+		elif menu.visible:
+			menu.hide()
+		else:
+			menu.show()

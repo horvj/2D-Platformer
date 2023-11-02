@@ -37,7 +37,7 @@ func _physics_process(delta):
 			$Sprite.play("Attack3")
 			currentAbility = 2
 			attack()
-	elif Global.player2Input == "Wizard":
+	if Global.player2Input == "Wizard":
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -51,26 +51,43 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump2") and is_on_floor():
 			$Sprite.play("Jump")
 			velocity.y = JUMP_VELOCITY
+		if Input.is_action_just_pressed("Attack4"):
+			$Sprite.play("Attack1")
+			currentAbility = 0
+			attack()
+		if Input.is_action_just_pressed("Attack5"):
+			$Sprite.play("Attack2")
+			currentAbility = 1
+			attack()
+		if Input.is_action_just_pressed("Attack6"):
+			$Sprite.play("Attack3")
+			currentAbility = 2
+			attack()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("left", "right")
-		if direction:
-			velocity.x = direction * SPEED
-			if direction < 0:
-				$Sprite.flip_h = true
-			else:
-				$Sprite.flip_h = false
+	var direction = Input.get_axis("left", "right")
+	if direction:
+		velocity.x = direction * SPEED
+		if direction < 0:
+			$Sprite.flip_h = true
+			$Attack.scale.x = -1
+			#$Attack.flip_h = true
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			$Sprite.flip_h = false
+			$Attack.scale.x = 1
+			#$Attack.flip_h = false
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-		move_and_slide()
+	move_and_slide()
 func attack():
-	var hitbox = $CollisionShape2D  # A CollisionShape2D representing the attack hitbox
-	var bodies = hitbox.get_overlapping_areas()  # Detect overlapping bodies
+	# Assign direction
+	var hitbox = $Attack  # A CollisionShape2D representing the attack hitbox
+	var bodies = hitbox.get_overlapping_bodies()  # Detect overlapping bodies
 	for body in bodies:
 		if body.has_node("Player") and body != self:  # Ensure the body is a different player
-			body.take_damage(attackDamage[currentAbility])
+			body.take_damage(attackDamage)
 func damage(d):
 	health -= d
 	if health <= d:

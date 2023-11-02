@@ -11,5 +11,5 @@ func _on_quit_pressed():
 
 
 func _on_controls_pressed():
-	$Menu.hide()
-	$Controls.show()
+	hide()
+	get_node("/root/Level/Controls").show()
