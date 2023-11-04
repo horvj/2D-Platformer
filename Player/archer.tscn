@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bdpgdtau1upru"]
+[gd_scene load_steps=70 format=3 uid="uid://bdpgdtau1upru"]
 
 [ext_resource type="Script" path="res://Player/Archer.gd" id="1_xq6ge"]
 [ext_resource type="Texture2D" uid="uid://ck35t20vv52dh" path="res://Assets/Archer/Hurt.png" id="2_c3a2e"]
@@ -450,6 +450,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j2uk"]
 size = Vector2(43, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmxs"]
+size = Vector2(45.5, 45)
+
 [node name="Archer" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -464,3 +467,9 @@ script = ExtResource("9_lvq44")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-11.5, 26.5)
 shape = SubResource("RectangleShape2D_1j2uk")
+
+[node name="Attack" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Attack"]
+position = Vector2(35.25, 33)
+shape = SubResource("RectangleShape2D_ggmxs")
