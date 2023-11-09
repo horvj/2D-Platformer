@@ -102,7 +102,7 @@ func attack():
 	var bodies = hitbox.get_overlapping_bodies()  # Detect overlapping bodies
 	for body in bodies:
 		if body.has_node("Player") and body != self:  # Ensure the body is a different player
-			body.take_damage(attackDamage)
+			body.damage(attackDamage[currentAbility])
 func damage(d):
 	health -= d
 	if health <= d:

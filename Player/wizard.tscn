@@ -241,7 +241,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,7 +258,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -284,7 +284,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Attack3",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -417,6 +417,3 @@ shape = SubResource("RectangleShape2D_mx337")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Attack"]
 position = Vector2(35.25, 33)
 shape = SubResource("RectangleShape2D_eoxnu")
-
-[connection signal="ready" from="." to="Player" method="_on_wizard_ready"]
-[connection signal="ready" from="Player/CollisionShape2D" to="Player" method="_on_collision_shape_2d_ready"]
