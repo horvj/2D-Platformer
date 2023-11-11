@@ -1,5 +1,6 @@
 extends Node
 
+
 var player1Input: String = ""
 var player2Input: String = ""
 var level: String = ""

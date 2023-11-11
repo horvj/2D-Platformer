@@ -29,7 +29,7 @@ func _physics_process(delta):
 	# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta
-			$Sprite.play("Jump")
+			$Sprite.play("Jump")	
 		elif abs(velocity.x) > 0:
 			$Sprite.play("Walk")
 		else:
@@ -37,18 +37,19 @@ func _physics_process(delta):
 
 			# Handle Jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-				$Sprite.play("Jump")
-				velocity.y = JUMP_VELOCITY
+			$Sprite.play("Jump")
+			velocity.y = JUMP_VELOCITY
 		if Input.is_action_just_pressed("Attack1"):
-			$Sprite.play("Attack1")
+			change_animation("Attack1")
+			print("Attack1")
 			currentAbility = 0
 			attack()
 		if Input.is_action_just_pressed("Attack2"):
-			$Sprite.play("Attack2")
+			change_animation("Attack2")
 			currentAbility = 1
 			attack()
 		if Input.is_action_just_pressed("Attack3"):
-			$Sprite.play("Attack3")
+			change_animation("Attack3")
 			currentAbility = 2
 			attack()
 	if Global.player2Input == "Wizard":
@@ -81,15 +82,15 @@ func _physics_process(delta):
 			$Sprite.play("Jump")
 			velocity.y = JUMP_VELOCITY
 		if Input.is_action_just_pressed("Attack4"):
-			$Sprite.play("Attack1")
+			change_animation("Attack1")
 			currentAbility = 0
 			attack()
 		if Input.is_action_just_pressed("Attack5"):
-			$Sprite.play("Attack2")
+			change_animation("Attack2")
 			currentAbility = 1
 			attack()
 		if Input.is_action_just_pressed("Attack6"):
-			$Sprite.play("Attack3")
+			change_animation("Attack3")
 			currentAbility = 2
 			attack()
 
@@ -110,3 +111,6 @@ func damage(d):
 func _on_body_entered(body):
 	if body.has_method("damage"):
 		body.damage(damage)
+func change_animation(a):
+	if $Sprite.animation == a or ($Sprite.is_playing() and not $Sprite.sprite_frames.get_animation_loop($Sprite.animation)):
+		$Sprite.play(a)
