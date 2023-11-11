@@ -193,7 +193,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack1",
-"speed": 1.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -207,7 +207,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack2",
-"speed": 1.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +224,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack3",
-"speed": 1.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -343,6 +343,8 @@ script = ExtResource("1_pv23s")
 sprite_frames = SubResource("SpriteFrames_8rg27")
 animation = &"Attack3"
 autoplay = "Walk"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("9_776qr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
