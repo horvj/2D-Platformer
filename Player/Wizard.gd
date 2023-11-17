@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -700.0
 var health = 100
 const attackDamage = [10, 20, 30]  # Damage values for each ability
 var currentAbility = 0  # Tracks the currently selected ability
@@ -102,11 +102,15 @@ func attack():
 	var hitbox = $Attack  # A CollisionShape2D representing the attack hitbox
 	var bodies = hitbox.get_overlapping_bodies()  # Detect overlapping bodies
 	for body in bodies:
-		if body.has_node("Player") and body != self:  # Ensure the body is a different player
+		if body.name == ("Player") and body != self:  # Ensure the body is a different player
 			body.damage(attackDamage[currentAbility])
 func damage(d):
 	health -= d
-	if health <= d:
+	if health <= d and Global.player1Input == "Wizard":
+		get_tree().change_scene_to_file("res://UI/Player2Win.tscn")
+		queue_free()
+	elif health <= d and Global.player2Input == "Wizard":
+		get_tree().change_scene_to_file("res://UI/Player1Win.tscn")
 		queue_free()
 func _on_body_entered(body):
 	if body.has_method("damage"):

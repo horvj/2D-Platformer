@@ -152,11 +152,13 @@ visible = false
 script = ExtResource("7_pe6ku")
 
 [node name="ColorRect2" type="ColorRect" parent="Controls"]
+layout_mode = 0
 offset_right = 1160.0
 offset_bottom = 652.0
 color = Color(0.831373, 0.572549, 0.85098, 1)
 
 [node name="Label3" type="Label" parent="Controls"]
+layout_mode = 0
 offset_left = 323.0
 offset_top = 179.0
 offset_right = 466.0
@@ -171,6 +173,7 @@ Attack 2: Control
 Attack 3: Z"
 
 [node name="Label4" type="Label" parent="Controls"]
+layout_mode = 0
 offset_left = 616.0
 offset_top = 178.0
 offset_right = 789.0
@@ -182,6 +185,7 @@ Right: Right Arrow Key
 Jump: Up Arrow Key"
 
 [node name="Menu" type="Button" parent="Controls"]
+layout_mode = 0
 offset_left = 439.0
 offset_top = 455.0
 offset_right = 734.0

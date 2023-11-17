@@ -341,10 +341,8 @@ script = ExtResource("1_pv23s")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_8rg27")
-animation = &"Attack3"
+animation = &"Attack1"
 autoplay = "Walk"
-frame = 3
-frame_progress = 1.0
 script = ExtResource("9_776qr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
