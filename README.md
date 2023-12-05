@@ -5,7 +5,7 @@
 Context and date
 Project 4 for Game Technology
 Description
-A fighting game.
+A fighting game. Similar to smash brothers.
 ## Implementation
 
 ## What Makes this a Game?
